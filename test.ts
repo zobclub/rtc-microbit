@@ -2,7 +2,7 @@
 RTC.init()
 basic.forever(function () {
     RTC.updateTime()
-    serial.writeString(RTC.strTime())
-    serial.writeLine("")
+    serial.writeLine(RTC.stringDate())
+    serial.writeLine(RTC.stringTime())
     basic.pause(1000)
 })
