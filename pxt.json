@@ -1,0 +1,17 @@
+{
+    "name": "rtc-mbit",
+    "version": "1.0.0",
+    "description": "RTC for micro:bit in MakeCode",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "rtc.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
