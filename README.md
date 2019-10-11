@@ -20,6 +20,9 @@ RTC.setTime(sec, min, hour)
 ```
 RTC.setDate(date, month, year)
 ```
+RTC.setTime(sec, min, hour)
+RTC.setDate(date, month, year)
+※この順で連続的に並べて実行すると正確に動作する
 
 * RTC Update Time
 ```
