@@ -110,7 +110,7 @@ namespace RTC {
         _t[6] = (t2 >> 8) & 0xFF
         _t[7] = t2 & 0xFF
     }
-    /**
+     /**
      * Set Time
      * @param sec describe parameter here, eg: 0
      * @param min describe parameter here, eg: 0
@@ -119,12 +119,11 @@ namespace RTC {
     //% blockId="RTC_SETTIME" block="set time sec %sec|min %min|hour %hour" 
     export function setTime(sec: number, min: number, hour: number): void {
         _t[0] = dec2bcd(0)
-        _t[1] = dec2bcd(sec)
-        _t[2] = dec2bcd(min)
-        _t[3] = dec2bcd(hour)
-        pins.i2cWriteNumber(i2cAddr, 0, NumberFormat.UInt8BE, false)
-        let t1 = (_t[0] << 24) + (_t[1] << 16) + (_t[2] << 8) + _t[3]
-        pins.i2cWriteNumber(i2cAddr, t1, NumberFormat.UInt32BE, false)
+        _t[1] = dec2bcd(sec)    //sec
+        _t[2] = dec2bcd(min)    //min
+        _t[3] = dec2bcd(hour)   //hour
+        let t1 = (1 << 24) + (_t[1] << 16) + (_t[2] << 8) + _t[3]
+        pins.i2cWriteNumber(i2cAddr, t1, NumberFormat.UInt32BE, true)
     }
     /**
      * Set Date
@@ -137,9 +136,8 @@ namespace RTC {
         _t[4] = dec2bcd(date)
         _t[5] = dec2bcd(month)
         _t[6] = dec2bcd(year)
-        _t[7] = dec2bcd(0)
-        pins.i2cWriteNumber(i2cAddr, 0x04, NumberFormat.UInt8BE, false)
-        let t2 = (_t[4] << 24) + (_t[5] << 16) + (_t[6] << 8) + _t[7]
+        //        pins.i2cWriteNumber(i2cAddr, 0x04, NumberFormat.UInt8BE, false)
+        let t2 = (4 << 24) + (_t[4] << 16) + (_t[5] << 8) + _t[6]
         pins.i2cWriteNumber(i2cAddr, t2, NumberFormat.UInt32BE, false)
     }
     /**
