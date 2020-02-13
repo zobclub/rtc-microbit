@@ -1,5 +1,5 @@
 {
-    "name": "rtc-mbit",
+    "name": "rtc-microbit",
     "version": "1.0.0",
     "description": "RTC for micro:bit in MakeCode",
     "license": "MIT",
