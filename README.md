@@ -1,4 +1,4 @@
-# rtc-mbit
+# rtc-microbit
 ---
 This extension supports EEPROM in MakeCode
 
